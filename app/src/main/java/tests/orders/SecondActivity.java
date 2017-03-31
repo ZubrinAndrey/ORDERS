@@ -8,15 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-/**
- * Created by ANDREY on 31.03.2017.
- */
 
 public class SecondActivity extends AppCompatActivity {
 
     private TextView txtLogin;
-
-    String[] names = {"Заказ1","Заказ2","Заказ3","Заказ4","Заказ5","Заказ6","Заказ7"};
+    String[] orders = {"Заказ1","Заказ2","Заказ3","Заказ4","Заказ5","Заказ6","Заказ7"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +22,8 @@ public class SecondActivity extends AppCompatActivity {
         txtLogin = (TextView) findViewById(R.id.txtLogin);
         txtLogin.setText(getIntent().getStringExtra("login"));
 
-
         ListView lvMain = (ListView) findViewById(R.id.lvMain);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
-
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, orders);
         lvMain.setAdapter(adapter);
     }
 
