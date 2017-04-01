@@ -1,5 +1,6 @@
 package tests.orders;
 
+import android.app.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         login = (EditText) findViewById(R.id.login);
+
+        setTitle("Авторизация");
     }
 
     public void login (View view) {
@@ -23,4 +26,12 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("login", login.getText().toString());
         startActivity(intent);
     }
+
+    public void login2 (View view) {
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
+    }
+
 }
+
+
