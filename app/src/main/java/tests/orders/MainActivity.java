@@ -1,6 +1,5 @@
 package tests.orders;
 
-import android.app.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,17 +20,16 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Авторизация");
     }
 
-    public void login (View view) {
+    public void login(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("login", login.getText().toString());
         startActivity(intent);
     }
 
-    public void login2 (View view) {
+    public void login2(View view) {
         Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
     }
-
 }
 
 

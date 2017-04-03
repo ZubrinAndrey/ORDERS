@@ -7,10 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-/**
- * Created by ANDREY on 31.03.2017.
- */
-
 public class ListActivityOrder extends AppCompatActivity {
 
     private TextView txtNumber;
@@ -20,9 +16,9 @@ public class ListActivityOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listorder);
 
-        txtNumber = (TextView) findViewById(R.id.ORDER_NUMBER);
-        txtNumber.setText(getIntent().getStringExtra("ORDER_NUMBER"));
-        String title = txtNumber.toString();
+        txtNumber = (TextView) findViewById(R.id.order_number);
+        txtNumber.setText(getIntent().getStringExtra("order_number"));
+        String title = String.valueOf((getIntent().getStringExtra("order_number")));
         setTitle(title);
     }
 

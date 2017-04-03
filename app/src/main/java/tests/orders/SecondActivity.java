@@ -8,13 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 public class SecondActivity extends AppCompatActivity {
 
     private TextView txtLogin;
-    String[] orders = {"Заказ1","Заказ2","Заказ3","Заказ4","Заказ5","Заказ6","Заказ7"};
+    String[] orders = {"Заказ 1", "Заказ 2", "Заказ 3", "Заказ 4", "Заказ 5", "Заказ 6", "Заказ 7"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +26,12 @@ public class SecondActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, orders);
         lvMain.setAdapter(adapter);
 
-
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
                 Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });
@@ -41,7 +39,7 @@ public class SecondActivity extends AppCompatActivity {
         setTitle("Заказы");
     }
 
-    public void back (View view){
+    public void back(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
