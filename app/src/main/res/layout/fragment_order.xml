@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/ORDER_NUMBER"
@@ -19,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="serif"
-        android:text="Стоимость 4500$"
+        android:text="@string/cost"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
     <TextView
@@ -28,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="serif"
-        android:text="Вес 45кг"
+        android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
     <TextView
@@ -37,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="serif"
-        android:text="Обьем 3м куб "
+        android:text="@string/size"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
     <TextView
@@ -46,12 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="serif"
-        android:text="Адрес доставки РФ, Москва, ул. Ленина, 45"
+        android:text="@string/adress"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="НАЗАД К СПИСКУ ЗАКАЗОВ" />
 </LinearLayout>

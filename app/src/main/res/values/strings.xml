@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Orders</string>
+    <string name="auth_title">Авторизация</string>
+    <string name="oderlist_title">Заказы</string>
+    <string name="cost">Стоимость 4500$</string>
+    <string name="weight">Вес 45кг</string>
+    <string name="size">Обьем 3м куб </string>
+    <string name="adress">Адрес доставки РФ, Москва, ул. Ленина, 45</string>
 </resources>

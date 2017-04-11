@@ -10,51 +10,41 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class SecondActivity extends AppCompatActivity {
+public class OrdersListActivity extends AppCompatActivity {
 
     @BindView(R.id.txtLogin) TextView txtLogin;
     @BindView(R.id.lvMain) ListView lvMain;
 
-
-
-    String[] orders = {"Заказ 1", "Заказ 2", "Заказ 3", "Заказ 4", "Заказ 5", "Заказ 6", "Заказ 7"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_oderslist);
         ButterKnife.bind(this);
 
         txtLogin.setText(getIntent().getStringExtra("login"));
 
+        ArrayList<String> orders = new ArrayList();
+        for (int i = 1; i < 26 ; i++) {
+            orders.add("Заказ №" + i);
+        }
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, orders);
         lvMain.setAdapter(adapter);
-
-
-
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
-                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                Intent intent = new Intent(OrdersListActivity.this, OrderActivity.class);
                 intent.putExtra("position", position);
                 startActivity(intent);
             }
         });
 
-        setTitle("Заказы");
-    }
-
-
-    @OnClick (R.id.button)
-    public void back(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        setTitle(R.string.oderlist_title);
     }
 
     @Override
