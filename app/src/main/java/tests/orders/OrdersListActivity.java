@@ -34,7 +34,7 @@ public class OrdersListActivity extends AppCompatActivity {
             orders.add("Заказ №" + i);
         }
 
-        CustomAdapter adapter = new CustomAdapter(this, orders);
+        CustomAdapterBase adapter = new CustomAdapterBase(this, orders);
         lvMain.setAdapter(adapter);
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
