@@ -11,25 +11,24 @@ import java.util.ArrayList;
 
 public class CustomAdapterBase extends BaseAdapter {
 
-    Context ctx;
+    ArrayList<String> orders;
     LayoutInflater lInflater;
-    ArrayList<String> objects;
 
-    public CustomAdapterBase(Context context, ArrayList<String> products) {
-        ctx = context;
-        objects = products;
-        lInflater = (LayoutInflater) ctx.getSystemService
+    public CustomAdapterBase(Context context, ArrayList<String>products){
+
+        orders=products;   // почему нельзя просто orders?
+        lInflater = (LayoutInflater) context.getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return objects.size();
+        return orders.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return objects.get(position);
+        return orders.get(position);
     }
 
     @Override
@@ -44,6 +43,7 @@ public class CustomAdapterBase extends BaseAdapter {
         if (view == null) {
             view = lInflater.inflate(R.layout.item, parent, false);
         }
+
         String p = getProduct(position);
         ((TextView) view.findViewById(R.id.tvDescr)).setText(p);
         ((TextView) view.findViewById(R.id.tvPrice)).setText("Стоимость 4500$");

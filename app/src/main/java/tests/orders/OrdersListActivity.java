@@ -10,16 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class OrdersListActivity extends AppCompatActivity {
 
-    @BindView(R.id.txtLogin) TextView txtLogin;
-    @BindView(R.id.lvMain) ListView lvMain;
-
- //   public ArrayList<String> orders;
+    @BindView(R.id.txtLogin)     TextView txtLogin;
+    @BindView(R.id.lvMain)     ListView lvMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,11 @@ public class OrdersListActivity extends AppCompatActivity {
         txtLogin.setText(getIntent().getStringExtra("login"));
 
         ArrayList<String> orders = new ArrayList();
-        for (int i = 1; i < 26 ; i++) {
+        for (int i = 1; i < 26; i++) {
             orders.add("Заказ №" + i);
         }
 
-        CustomAdapterBase adapter = new CustomAdapterBase(this, orders);
+        CustomAdapterBase adapter = new CustomAdapterBase(this,orders);
         lvMain.setAdapter(adapter);
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
