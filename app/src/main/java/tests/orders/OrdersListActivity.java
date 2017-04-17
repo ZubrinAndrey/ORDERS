@@ -19,6 +19,8 @@ public class OrdersListActivity extends AppCompatActivity {
     @BindView(R.id.txtLogin) TextView txtLogin;
     @BindView(R.id.lvMain) ListView lvMain;
 
+ //   public ArrayList<String> orders;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class OrdersListActivity extends AppCompatActivity {
             orders.add("Заказ №" + i);
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, orders);
+        CustomAdapter adapter = new CustomAdapter(this, orders);
         lvMain.setAdapter(adapter);
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

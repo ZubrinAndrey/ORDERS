@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tvDescr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Заказ №1"
+        android:textSize="20sp"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Стоимость 4500$"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginLeft="10sp"
+        />
+    <TextView
+        android:id="@+id/tvSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вес 45кг"
+        android:textSize="15sp"
+        android:gravity="right"
+        android:layout_marginRight="5dp"
+        />
+
+
+</LinearLayout>
