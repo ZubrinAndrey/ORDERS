@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="serif"
-        android:text="@string/adress"
+        android:text="@string/address"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
 </LinearLayout>

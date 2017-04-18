@@ -1,4 +1,4 @@
-package tests.orders;
+package tests.orders.orderlist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import tests.orders.R;
 
 public class CustomAdapter extends ArrayAdapter<String> {
 

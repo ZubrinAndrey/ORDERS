@@ -1,4 +1,4 @@
-package tests.orders;
+package tests.orders.orderlist;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import tests.orders.R;
 
 public class CustomAdapterBase extends BaseAdapter {
 

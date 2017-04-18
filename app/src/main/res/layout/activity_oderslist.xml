@@ -8,6 +8,6 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:id="@+id/fragment_orderlist"
-       android:name="tests.orders.OrderListFrg"/>
+       android:name="tests.orders.orderlist.OrderListFragment"/>
 
 </LinearLayout>

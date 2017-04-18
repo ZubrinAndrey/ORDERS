@@ -1,4 +1,4 @@
-package tests.orders;
+package tests.orders.orderdetails;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,10 +7,12 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import tests.orders.R;
 
-public class OrderActivity extends AppCompatActivity {
+public class OrderDetailsActivity extends AppCompatActivity {
 
-    @BindView(R.id.ORDER_NUMBER) TextView txtNumber;
+    @BindView(R.id.ORDER_NUMBER)
+    TextView txtNumber;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

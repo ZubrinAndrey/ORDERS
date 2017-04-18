@@ -7,7 +7,7 @@
    <fragment
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:name="tests.orders.OrderFrg"
+       android:name="tests.orders.orderdetails.OrderDetailsFragment"
        android:id="@+id/fragment_order"/>
 
 </LinearLayout>

@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tests.orders.AuthActivity">
+    tools:context="tests.orders.authentication.AuthActivity">
 
    <fragment
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:id="@+id/fragment_auth"
-       android:name="tests.orders.AuthFrg"/>
+       android:name="tests.orders.authentication.AuthFragment"/>
 
 </android.support.constraint.ConstraintLayout>

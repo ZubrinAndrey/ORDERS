@@ -1,4 +1,4 @@
-package tests.orders;
+package tests.orders.authentication;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class AuthFrg extends Fragment {
+import tests.orders.R;
+
+public class AuthFragment extends Fragment {
 
     @Nullable
     @Override
