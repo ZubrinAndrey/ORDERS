@@ -13,14 +13,12 @@ import tests.orders.R;
 
 public class CustomAdapterBase extends BaseAdapter {
 
-    ArrayList<String> orders;
-    LayoutInflater lInflater;
+    private ArrayList<String> orders;
+    private Context context;
 
-    public CustomAdapterBase(Context context, ArrayList<String>products){
-
-        orders=products;   // почему нельзя просто orders?
-        lInflater = (LayoutInflater) context.getSystemService
-                (Context.LAYOUT_INFLATER_SERVICE);
+    public CustomAdapterBase(Context context, ArrayList<String> orders){
+        this.orders = orders;
+        this.context = context;
     }
 
     @Override
@@ -43,13 +41,16 @@ public class CustomAdapterBase extends BaseAdapter {
 
         View view = convertView;
         if (view == null) {
-            view = lInflater.inflate(R.layout.item, parent, false);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.item, parent, false);
         }
 
         String p = getProduct(position);
+
         ((TextView) view.findViewById(R.id.tvDescr)).setText(p);
         ((TextView) view.findViewById(R.id.tvPrice)).setText("Стоимость 4500$");
         ((TextView) view.findViewById(R.id.tvSize)).setText("Обьем 3м куб");
+
         return view;
     }
 
