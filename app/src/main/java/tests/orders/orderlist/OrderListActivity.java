@@ -1,6 +1,9 @@
 package tests.orders.orderlist;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +19,9 @@ import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import tests.orders.orderdetails.OrderDetailsActivity;
 import tests.orders.R;
+import tests.orders.orderdetails.OrderDetailsFragment;
+
+import static tests.orders.R.id.txtLogin;
 
 public class OrderListActivity extends AppCompatActivity {
 
@@ -55,7 +61,7 @@ public class OrderListActivity extends AppCompatActivity {
 
     private ArrayList<String> getOrders() {
         ArrayList<String> orders = new ArrayList();
-        for (int i = 1; i < 26 ; i++) {
+        for (int i = 1; i < 26; i++) {
             orders.add("Заказ №" + i);
         }
 
@@ -86,4 +92,5 @@ public class OrderListActivity extends AppCompatActivity {
                 .setNegativeButton("Нет!", null)
                 .show();
     }
+
 }

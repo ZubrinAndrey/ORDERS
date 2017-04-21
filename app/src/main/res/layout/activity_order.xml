@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-   <fragment
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:name="tests.orders.orderdetails.OrderDetailsFragment"
-       android:id="@+id/fragment_order"/>
+    <LinearLayout
+        android:id="@+id/container3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
 
 </LinearLayout>

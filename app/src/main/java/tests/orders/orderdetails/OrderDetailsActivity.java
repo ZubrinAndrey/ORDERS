@@ -1,18 +1,19 @@
 package tests.orders.orderdetails;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import tests.orders.R;
 
 public class OrderDetailsActivity extends AppCompatActivity {
 
-    @BindView(R.id.ORDER_NUMBER)
-    TextView txtNumber;
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,9 +23,13 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         int position = getIntent().getIntExtra("position", 1);
         position++;
-        txtNumber.setText("Заказ номер " + String.valueOf(position));
-
         setTitle("Заказ номер " + position);
+
+        mFragmentManager = getFragmentManager();
+        OrderDetailsFragment orderDetailsFragment = new OrderDetailsFragment();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.add(R.id.container3, orderDetailsFragment);
+        mFragmentTransaction.commit();
     }
 }
 
