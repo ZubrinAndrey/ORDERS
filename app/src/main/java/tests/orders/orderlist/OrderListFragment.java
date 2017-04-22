@@ -15,9 +15,6 @@ import tests.orders.R;
 
 public class OrderListFragment extends Fragment {
 
-//    @BindView(R.id.txtLogin)
-//    TextView txtLogin;
-
 
 
     @Nullable
