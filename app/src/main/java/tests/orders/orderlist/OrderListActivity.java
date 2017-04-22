@@ -1,7 +1,6 @@
 package tests.orders.orderlist;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -9,29 +8,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnItemClick;
-import tests.orders.orderdetails.OrderDetailsActivity;
 import tests.orders.R;
-import tests.orders.orderdetails.OrderDetailsFragment;
-
-import static tests.orders.R.id.txtLogin;
 
 public class OrderListActivity extends AppCompatActivity {
 
-    private static final String KEY_LOGIN = "login";
+    public static final String KEY_LOGIN = "login";
 
-    @BindView(R.id.txtLogin)
-    TextView txtLogin;
-
-    @BindView(R.id.lvMain)
-    ListView lvMain;
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
 
     public static Intent newInstance(Context context, String login) {
         Intent intent = new Intent(context, OrderListActivity.class);
@@ -45,34 +29,13 @@ public class OrderListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_oderslist);
 
-        ButterKnife.bind(this);
-
-        initViews();
-
         setTitle(R.string.order_list_title);
-    }
 
-    private void initViews() {
-        if (getIntent().getStringExtra(KEY_LOGIN) != null)
-            txtLogin.setText(getIntent().getStringExtra(KEY_LOGIN));
-
-        lvMain.setAdapter(new CustomAdapterBase(this, getOrders()));
-    }
-
-    private ArrayList<String> getOrders() {
-        ArrayList<String> orders = new ArrayList();
-        for (int i = 1; i < 26; i++) {
-            orders.add("Заказ №" + i);
-        }
-
-        return orders;
-    }
-
-    @OnItemClick(R.id.lvMain)
-    public void onOrderListItemClick(int position) {
-        Intent intent = new Intent(this, OrderDetailsActivity.class);
-        intent.putExtra("position", position);
-        startActivity(intent);
+        mFragmentManager = getFragmentManager();
+        OrderListFragment orderListFragment = new OrderListFragment();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.add(R.id.container2, orderListFragment);
+        mFragmentTransaction.commit();
     }
 
     @Override

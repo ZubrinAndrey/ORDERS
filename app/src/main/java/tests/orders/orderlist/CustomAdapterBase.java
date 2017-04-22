@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import tests.orders.R;
 
 public class CustomAdapterBase extends BaseAdapter {
