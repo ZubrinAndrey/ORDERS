@@ -55,5 +55,4 @@ public class OrderListActivity extends AppCompatActivity {
                 .setNegativeButton("Нет!", null)
                 .show();
     }
-
 }
