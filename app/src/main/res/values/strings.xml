@@ -7,4 +7,6 @@
     <string name="size">Обьем 3м куб </string>
     <string name="address">Адрес доставки РФ, Москва, ул. Ленина, 45</string>
     <string name="exception_wrong_login_and_password">Вы ввели неверный логин или пароль</string>
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
 </resources>
