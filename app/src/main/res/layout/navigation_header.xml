@@ -17,4 +17,15 @@
         android:text="NAVIGATION"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:text="UserName" />
+
+
 </RelativeLayout>
