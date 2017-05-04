@@ -10,18 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".authentication.AuthActivity"
+
+        <activity
+            android:name=".authentication.AuthActivity"
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
 
         <activity android:name=".orderlist.OrderListActivity" />
-        <activity android:name=".orderdetails.OrderDetailsActivity" />
 
+        <activity android:name=".orderdetails.OrderDetailsActivity" />
 
     </application>
 

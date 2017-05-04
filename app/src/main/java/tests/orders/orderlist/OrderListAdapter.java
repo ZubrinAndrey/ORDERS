@@ -11,20 +11,14 @@ import java.util.ArrayList;
 
 import tests.orders.R;
 
-public class CustomAdapterBase extends BaseAdapter {
+public class OrderListAdapter extends BaseAdapter {
 
     private ArrayList<String> orders;
     private Context context;
 
-    public CustomAdapterBase(Context context, ArrayList<String> orders) {
+    public OrderListAdapter(Context context, ArrayList<String> orders) {
         this.orders = orders;
         this.context = context;
-    }
-
-    static class ViewHolder {
-        TextView tvPrice;
-        TextView tvSize;
-        TextView tvDescr;
     }
 
     @Override
@@ -44,17 +38,18 @@ public class CustomAdapterBase extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         View view = convertView;
         ViewHolder viewHolder;
 
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.item, parent, false);
+
             viewHolder = new ViewHolder();
-            viewHolder.tvDescr = (TextView) view.findViewById(R.id.tvDescr);
-            viewHolder.tvPrice = (TextView) view.findViewById(R.id.tvPrice);
-            viewHolder.tvSize = (TextView) view.findViewById(R.id.tvSize);
+            viewHolder.description = (TextView) view.findViewById(R.id.tvDescr);
+            viewHolder.price = (TextView) view.findViewById(R.id.tvPrice);
+            viewHolder.size = (TextView) view.findViewById(R.id.tvSize);
+
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
@@ -62,14 +57,20 @@ public class CustomAdapterBase extends BaseAdapter {
 
         String p = getOrder(position);
 
-        viewHolder.tvDescr.setText(p);
-        viewHolder.tvPrice.setText("Стоимость 4500$");
-        viewHolder.tvSize.setText("Обьем 3м куб");
+        viewHolder.description.setText(p);
+        viewHolder.price.setText("Стоимость 4500$");
+        viewHolder.size.setText("Обьем 3м куб");
 
         return view;
     }
 
     String getOrder(int position) {
         return ((String) getItem(position));
+    }
+
+    private class ViewHolder {
+        TextView price;
+        TextView size;
+        TextView description;
     }
 }

@@ -25,12 +25,17 @@ public class AuthFragment extends Fragment {
     @BindView(R.id.password)
     EditText password;
 
+    public static AuthFragment newInstance() {
+        return new AuthFragment();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View v = inflater.inflate(R.layout.fragment_auth, container, false);
+
         ButterKnife.bind(this, v);
+
         return v;
     }
 
@@ -38,6 +43,7 @@ public class AuthFragment extends Fragment {
     public void login(View view) {
         String login = this.login.getText().toString();
         String password = this.password.getText().toString();
+
         if (login.equals(TEST_LOGIN) && password.equals(TEST_PASSWORD))
             startActivity(OrderListActivity.newInstance(getActivity(), login));
         else

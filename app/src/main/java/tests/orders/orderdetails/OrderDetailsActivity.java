@@ -38,8 +38,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements Navigatio
         ButterKnife.bind(this);
 
         int position = getIntent().getIntExtra("position", 1);
-        position++;
-        setTitle("Заказ номер " + position);
+        setTitle("Заказ номер " + position + 1);
 
         mFragmentManager = getFragmentManager();
         OrderDetailsFragment orderDetailsFragment = new OrderDetailsFragment();
@@ -57,7 +56,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements Navigatio
         navigationView.setNavigationItemSelectedListener(this);
 
         View header = navigationView.getHeaderView(0);
-        TextView textUserName = (TextView) header.findViewById(R.id.textUserName);
+        TextView textUserName = (TextView) header.findViewById(R.id.user_name);
         textUserName.setText(getIntent().getStringExtra(OrderListActivity.KEY_LOGIN));   // не работает
     }
 
