@@ -16,12 +16,8 @@ public class OrderDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_order, container, false);
-
-        int orderNumber = getActivity().getIntent().getIntExtra("position", 1);
-        orderNumber++;
-
         TextView tv = (TextView) v.findViewById(R.id.ORDER_NUMBER);
-        tv.setText("Заказ номер " + orderNumber);
+        tv.setText(getActivity().getTitle());
 
         return v;
     }

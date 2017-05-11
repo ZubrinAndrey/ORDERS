@@ -45,8 +45,6 @@ public class OrderListActivity extends AppCompatActivity implements NavigationVi
 
         setContentView(R.layout.activity_order_list);
 
-        setTitle(R.string.order_list_title);
-
         createSideMenu();
 
         setToolbarIcon();
@@ -75,29 +73,29 @@ public class OrderListActivity extends AppCompatActivity implements NavigationVi
         userName.setText(getIntent().getStringExtra(KEY_LOGIN));
     }
 
-    private void addFragment(Fragment fragment) {
+    public void addFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.container, fragment);
         fragmentTransaction.commit();
     }
-
-    @Override
-    public void onBackPressed() {
-        openQuitConfirmationDialog();
-    }
-
-    private void openQuitConfirmationDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("Выход: Вы уверены?")
-                .setPositiveButton("Да!", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("Нет!", null)
-                .show();
-    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        openQuitConfirmationDialog();
+//    }
+//
+//    private void openQuitConfirmationDialog() {
+//        new AlertDialog.Builder(this)
+//                .setTitle("Выход: Вы уверены?")
+//                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finish();
+//                    }
+//                })
+//                .setNegativeButton("Нет", null)
+//                .show();
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

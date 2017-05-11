@@ -1,6 +1,7 @@
 package tests.orders.orderlist;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,9 @@ import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import tests.orders.R;
 import tests.orders.orderdetails.OrderDetailsActivity;
+import tests.orders.orderdetails.OrderDetailsFragment;
+
+import static android.R.attr.fragment;
 
 public class OrderListFragment extends Fragment {
 
@@ -49,6 +53,7 @@ public class OrderListFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         initViews();
+        getActivity().setTitle(R.string.order_list_title);
 
         return view;
     }
@@ -61,7 +66,7 @@ public class OrderListFragment extends Fragment {
     }
 
     private ArrayList<String> getOrders() {
-        ArrayList<String> orders = new ArrayList();
+        ArrayList orders = new ArrayList();
 
         for (int i = 1; i < 26; i++) {
             orders.add("Заказ №" + i);
@@ -72,8 +77,13 @@ public class OrderListFragment extends Fragment {
 
     @OnItemClick(R.id.list)
     public void onOrderListItemClick(int position) {
-        Intent intent = new Intent(getActivity(), OrderDetailsActivity.class);
-        intent.putExtra("position", position);
-        startActivity(intent);
+
+        OrderDetailsFragment fragment = new OrderDetailsFragment();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+        position++;
+        getActivity().setTitle("Заказ номер " + position);
     }
 }
