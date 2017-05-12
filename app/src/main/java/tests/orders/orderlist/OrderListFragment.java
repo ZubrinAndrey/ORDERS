@@ -17,7 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import tests.orders.R;
-import tests.orders.orderdetails.OrderDetailsActivity;
 import tests.orders.orderdetails.OrderDetailsFragment;
 
 import static android.R.attr.fragment;
