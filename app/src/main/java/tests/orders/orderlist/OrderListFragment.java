@@ -2,7 +2,6 @@ package tests.orders.orderlist;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,16 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import tests.orders.R;
 import tests.orders.orderdetails.OrderDetailsFragment;
-
-import static android.R.attr.fragment;
 
 public class OrderListFragment extends Fragment {
 
@@ -52,6 +47,7 @@ public class OrderListFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         initViews();
+
         getActivity().setTitle(R.string.order_list_title);
 
         return view;
@@ -77,12 +73,16 @@ public class OrderListFragment extends Fragment {
     @OnItemClick(R.id.list)
     public void onOrderListItemClick(int position) {
 
-        OrderDetailsFragment fragment = new OrderDetailsFragment();
+        replaceFragment(OrderDetailsFragment.newInstance());
+
+        position++;
+        getActivity().setTitle("Заказ номер " + position);
+    }
+
+    public void replaceFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-        position++;
-        getActivity().setTitle("Заказ номер " + position);
     }
 }

@@ -20,9 +20,6 @@ import tests.orders.orderlist.OrderListActivity;
 
 public class AuthFragment extends Fragment {
 
-    private static final String TEST_LOGIN = "Tester";
-    private static final String TEST_PASSWORD = "12345";
-
     @BindView(R.id.login)
     EditText login;
 
@@ -36,11 +33,11 @@ public class AuthFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_auth, container, false);
+        View view = inflater.inflate(R.layout.fragment_auth, container, false);
 
-        ButterKnife.bind(this, v);
+        ButterKnife.bind(this, view);
 
-        return v;
+        return view;
     }
 
     @OnClick(R.id.button2)

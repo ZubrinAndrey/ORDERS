@@ -1,15 +1,12 @@
 package tests.orders.authentication;
 
-import android.app.FragmentManager;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import tests.orders.R;
 
 public class AuthActivity extends AppCompatActivity {
-
-    private FragmentManager mFragmentManager;
-    private FragmentTransaction mFragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +15,13 @@ public class AuthActivity extends AppCompatActivity {
 
         setTitle(R.string.auth_title);
 
-        mFragmentManager = getFragmentManager();
-        AuthFragment authFragment = new AuthFragment();
-        mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.add(R.id.container1, authFragment);
-        mFragmentTransaction.commit();
+        addFragment(AuthFragment.newInstance());
+    }
+
+    public void addFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.container, fragment);
+        fragmentTransaction.commit();
     }
 }
 
