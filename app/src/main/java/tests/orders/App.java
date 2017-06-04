@@ -9,5 +9,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
     //    Toast.makeText(this, "NEW APP CREATED", Toast.LENGTH_SHORT).show();
+        // TESTS
     }
 }
